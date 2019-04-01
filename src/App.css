@@ -1,0 +1,36 @@
+.donutList-Containers{
+  display:flex;
+  position: relative;
+width: 20vw;
+height:30vh;
+border: 5px solid white;
+}
+
+
+.donutList-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+  max-width: 1000px;
+  
+  margin: 12px
+  
+}
+
+.donutList-container > div {
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  float: left;
+  margin: 0px, 0px, 15px, 15px;
+  max-width: 10px;
+}
+
+.donutList-container > div > img {
+  width: 10%;
+  flex-wrap: wrap;
+}

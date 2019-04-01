@@ -1,0 +1,42 @@
+.donutList-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: space-around;
+  height: 30%;
+  width: 25%;
+  float: right;
+  border: 5px;
+  border-color: black;
+  
+
+}
+  
+.donutList-container > img {
+  
+  width: 75%;
+  margin: 5px;
+  border-radius: 150px; 
+
+  }
+
+  .donutList-container > h1 {
+    font-size: 25px
+  }
+
+  .donutList-container > h2 {
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+  }
+
+  .mapped-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .donutList-container > button{
+    font-size: 25px;
+  }
+
+ 

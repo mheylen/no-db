@@ -1,0 +1,25 @@
+.header-container{
+    
+    height: 13vh;
+    width: 100%;
+    background-color: whitesmoke;
+    margin-bottom: 30px;
+    background-image: url("donutLogo.png");
+    background-size: 100px;
+    background-repeat: no-repeat
+}
+
+
+header {
+    height: 100px;
+    background-color: black;
+    padding: 25px 50px;
+}
+.logo, #main-nav {
+height: 100%;
+background-color: white;
+}
+.logo {
+    width: 100px;
+    float: left;
+}
