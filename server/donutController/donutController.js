@@ -6,17 +6,25 @@ module.exports = {
         res.status(200).send(donuts)
     },
     userAddDonuts: (req, res) => {
-        console.log(req.body)
+        
+  
         const {id, name, image_path, description, price, quantity} = req.body
-        const newDonuts = {
-            id,
-            name,
-            image_path,
-            description,
-            price,
-            quantity
-        };
-        myDonuts.push(newDonuts);
+        let alreadyAdded = myDonuts.findIndex((donut) => donut.name === name)
+        console.log(alreadyAdded)
+        if(alreadyAdded !== - 1){
+            console.log(myDonuts[alreadyAdded])
+            myDonuts[alreadyAdded].quantity += 1
+        }else {
+            const newDonuts = {
+                id,
+                name,
+                image_path,
+                description,
+                price,
+                quantity
+            };
+            myDonuts.push(newDonuts);
+        }
         
         res.status(200).send(myDonuts);
     },

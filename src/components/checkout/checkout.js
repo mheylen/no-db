@@ -11,8 +11,8 @@ let mappedCheckout = props.checkoutList.map(donuts => {
         <div key={donuts.id}>
             <img src={donuts.image_path} alt=""/>
             <h2>${donuts.price}.00</h2>
-            <button onClick={() => props.donutDelete(donuts.id)}>Remove</button>
-            
+            <button onClick={() => props.donutDelete(donuts.quantity)}>Remove</button>
+            <h3>x{donuts.quantity}</h3>
         </div>
         );
     

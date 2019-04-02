@@ -31,14 +31,7 @@ getAllDonuts = () => {
 addToCart = donuts => {
 const {checkoutList} = this.state
 
-  var index = checkoutList.findIndex(quan => {
-    console.log('quan', quan)
-    console.log('donuts', donuts)
-    return +donuts.id === +quan.id
-  })
-console.log(index)
-  if( index !== -1){axios.put(`/api/donuts/${donuts.id}`, checkoutList[index].quantity+1)
-  }else{
+ 
 
   const newDonut = {
     id: donuts.id,
@@ -54,9 +47,7 @@ console.log(index)
       checkoutList: res.data
     });
   });
-}};
-
-
+}
 
 
 
