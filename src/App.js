@@ -11,21 +11,9 @@ constructor(){
   this.state ={
     donutList: [],
     checkoutList: [],
-    clicks:0,
-    show:true
   };
-
 };
 
-IncrementItem = () => {
-  this.setState({click: this.state.clicks +1});
-};
-DecreaseItem = () => {
-  this.setState({ clicks: this.state.click -1});
-};
-ToggleClick = () => {
-  this.setState({ show: !this.state.show})
-};
 
 componentDidMount(){
   this.getAllDonuts();
@@ -41,13 +29,24 @@ getAllDonuts = () => {
   });
 };
 addToCart = donuts => {
+const {checkoutList} = this.state
+
+  var index = checkoutList.findIndex(quan => {
+    console.log('quan', quan)
+    console.log('donuts', donuts)
+    return +donuts.id === +quan.id
+  })
+console.log(index)
+  if( index !== -1){axios.put(`/api/donuts/${donuts.id}`, checkoutList[index].quantity+1)
+  }else{
+
   const newDonut = {
     id: donuts.id,
     name: donuts.name,
     image_path: donuts.image_path,
     description: donuts.description,
     price: donuts.price,
-    quantity: 0
+    quantity: 1
   };
   console.log(newDonut);
   axios.post('/api/donuts', newDonut).then(res =>{
@@ -55,8 +54,13 @@ addToCart = donuts => {
       checkoutList: res.data
     });
   });
-  
-};
+}};
+
+
+
+
+
+
 
 deleteFromCart = (id) => {
   axios

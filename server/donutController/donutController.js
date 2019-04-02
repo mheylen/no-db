@@ -1,26 +1,29 @@
 const donuts = require("../data/data.json");
 let myDonuts = [];
-let id = 0;
+// let id = 0;
 module.exports = {
     harvestDonuts: (req, res) => {
         res.status(200).send(donuts)
     },
     userAddDonuts: (req, res) => {
         console.log(req.body)
-        const {name, image_path, description, price} = req.body
+        const {id, name, image_path, description, price, quantity} = req.body
         const newDonuts = {
             id,
             name,
             image_path,
             description,
-            price
+            price,
+            quantity
         };
         myDonuts.push(newDonuts);
-        id++;
+        
         res.status(200).send(myDonuts);
     },
     updateDonuts:(req, res) => {},
+
     donutDelete: (req, res) => {
+    
         const {id} = req.params;
         let index = myDonuts.findIndex(donuts => donuts.id === +id)
 
@@ -30,6 +33,7 @@ module.exports = {
         }else{
             res.status(404).send("Somebody ate your donut.")
         }
+        
     }
 
 };
