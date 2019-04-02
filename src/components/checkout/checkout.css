@@ -6,7 +6,7 @@
     align-items: center;
     position: fixed;
     margin-left: 85%;
-    background-color: blanchedalmond;
+    overflow: auto;
     
   }
   
@@ -16,6 +16,7 @@
     border-radius: 150px;
     margin-top: 10px;
     margin-bottom: 10px;
+  
 
   }
 
@@ -25,3 +26,5 @@
     margin-top: 25px;
     margin-bottom: 20px;
   }
+
+  

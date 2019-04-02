@@ -31,8 +31,6 @@ getAllDonuts = () => {
 addToCart = donuts => {
 const {checkoutList} = this.state
 
- 
-
   const newDonut = {
     id: donuts.id,
     name: donuts.name,
@@ -69,12 +67,13 @@ deleteFromCart = (id) => {
    console.log(this.state.checkoutList)
     return (
       <div >
-        <Header />
-        <Checkout checkoutList={this.state.checkoutList}
-        donutDelete ={this.deleteFromCart} />
-        <DonutList 
-        donutList={this.state.donutList}
-        addToCart={this.addToCart} />
+        <Header /> 
+        
+          <Checkout checkoutList={this.state.checkoutList}
+          donutDelete ={this.deleteFromCart} />
+          <DonutList 
+          donutList={this.state.donutList}
+          addToCart={this.addToCart} />
         
       </div>
     );
